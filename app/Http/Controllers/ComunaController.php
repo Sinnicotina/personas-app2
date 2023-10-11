@@ -5,11 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Comuna;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-<<<<<<< HEAD
 
-
-=======
->>>>>>> f020cafd7b7c19d71f6c2504cf7c3e3649e85996
+use function PHPUnit\Framework\returnSelf;
 
 class ComunaController extends Controller
 {
@@ -21,7 +18,7 @@ class ComunaController extends Controller
     public function index()
     {
         //$comunas=Comuna::all();
-<<<<<<< HEAD
+
         //return view("comunas.index", ["comunas"=>$comunas]);
         $comunas=DB::table('tb_comuna')
         ->join('tb_municipio', 'tb_comuna.muni_codi', '-', 'tb_municipio.muni_codi')
@@ -29,13 +26,7 @@ class ComunaController extends Controller
         ->get();
         return view('comuna.index', ['comunas'=>$comunas]);
 
-=======
-        $comunas = DB::table('tb_comuna')
-        ->join('tb_municipio', 'tb_comuna.muni_codi','-','tb_municipio.muni_codi')
-        ->select('tb_comuna.*', "tb_municipio.muni_nomb")
-        ->get();
-        return view('comuna.index', ['comunas'=>$comunas]);
->>>>>>> f020cafd7b7c19d71f6c2504cf7c3e3649e85996
+
     }
 
     /**
@@ -115,6 +106,17 @@ class ComunaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comuna =Comuna::find($id);
+        $comuna-> delete();
+
+        $comunas=DB::table('tb_comuna')
+        ->join('tb_municipio', 'tb_comuna.muni_codi','=','tb_municipio.muni_codi')
+        ->select('tb_comuna.*',"tb_municipio.muni_nomb")
+        ->get();
+
+        return view('comuna.index',['comunas'=>$comunas]);
+
+
+
     }
 }
