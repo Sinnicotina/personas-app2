@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <h1>Listado De Comunas</h1>
-        <a href="{{route('comunas.create')}}" class="btn btn-success">Add</a>
+        <a href="{{ route('comunas.create') }}" class="btn btn-success">Add</a>
         <table class="table">
             <thead>
                 <tr>
@@ -28,21 +28,16 @@
             </thead>
             <tbody>
                 @foreach ($comunas as $comuna)
-                    <tr class="">
+                    <tr>
                         <th scope="row">{{ $comuna->$comu_codi }}</th>
                         <td>{{ $comuna->comu_nomb }}</td>
                         <td>{{ $comuna->muni_nomb }}</td>
-                        <td><span>otto</span></td>
+                        <td><span>Acciones</span></td>
                     </tr>
                 @endforeach
-
             </tbody>
         </table>
     </div>
-    </main>
-    <footer>
-        <!-- place footer here -->
-    </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">

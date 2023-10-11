@@ -18,4 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::get('/comunas', [ComunaController::class,'index']);
+route::get('/comunas', [ComunaController::class,'index'])->name('comunas.index');
+route::post('/comunas', [ComunaController::class,'store'])->name('comunas.store');
+route::get('/comunas/create', [ComunaController::class,'create'])->name('comunas.create');
