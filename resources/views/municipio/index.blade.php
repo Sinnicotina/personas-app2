@@ -18,34 +18,29 @@
         <!-- place navbar here -->
     </header>
     <main>
-      <div class="container">
-        <h1>municipios lista</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">code</th>
-                    <th scope="col">Municipio</th>
-                    <th scope="col">Departamento</th>
-                    <th scope="col">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-              @foreach ($municipios as $municipio)
-                <tr>
-                    <th scope="row">{{$municipio ->muni_codi}}</th>
-                    <td>{{$municipio->muni_nomb}}</td>
-                    <td>{{$municipio->depa_codi}}</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="container">
+            <h1>municipios lista</h1>
+            <a href="{{ route('municipios.create') }} " class="btn btn-success">añadir</a>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">code</th>
+                        <th scope="col">Municipio</th>
+                        <th scope="col">Departamento</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($municipios as $municipio)
+                        <tr>
+                            <th scope="row">{{ $municipio->muni_codi }}</th>
+                            <td>{{ $municipio->muni_nomb }}</td>
+                            <td>{{ $municipio->depa_nomb }}</td>
+                            <td>@mdo</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
     </main>
     <footer>
         <!-- place footer here -->

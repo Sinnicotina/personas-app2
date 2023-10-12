@@ -25,6 +25,8 @@ route::get('/comunas/create', [ComunaController::class,'create'])->name('comunas
 route::delete('/comunas/{comuna}', [ComunaController::class,'destroy'])->name('comunas.destroy');
 route::put('/comunas/{comuna}', [ComunaController::class,'update'])->name('comunas.update');
 route::get('/comunas/{comuna}/edit', [ComunaController::class,'edit'])->name('comunas.edit');
-route::get('/municipios', [MunicipioController::class,'index'])->name('comunas.index');
+route::get('/municipios', [MunicipioController::class,'index'])->name('municipios.index');
+route::post('/municipios', [MunicipioController::class,'store'])->name('municipios.store');
+route::get('/municipios/create', [MunicipioController::class,'create'])->name('municipios.create');
 
 
