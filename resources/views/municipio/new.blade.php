@@ -20,7 +20,7 @@
     <main>
         <div class="container">
             <h1>Añadir municipio</h1>
-            <form method="POST" action="{{ route(municipios.store) }}">
+            <form method="POST" action="{{ route('municipios.store') }}">
                 @csrf
 
                 <div class="mb-3">
@@ -32,10 +32,6 @@
                     <label for="name" class="form-label">municipio</label>
                     <input type="text" required class="form-control" id="name" aria-describedby="nameHelp"
                         name="name" placeholder="municipio nombre.">
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 <label for="Departament">Departamento</label>
             <select class="form-select" id="Departament" name="code" required>
