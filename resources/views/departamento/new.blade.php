@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>añadir municipio</title>
+    <title>añadir departamento</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,36 +19,33 @@
     </header>
     <main>
         <div class="container">
-            <h1>Añadir municipio</h1>
-            <form method="POST" action="{{ route('municipios.store') }}">
+            <h1>Añadir Departamento</h1>
+            <form method="POST" action="{{ route('departamentos.store') }}">
                 @csrf
 
                 <div class="mb-3">
                     <label for="id" class="form-label">code</label>
                     <input type="text" class="form-control" id="id" aria-describedby="idHelp" name="id" disabled="">
-                    <div id="idHelp" class="form-text">codigo municipio</div>
+                    <div id="idHelp" class="form-text">codigo Departamento</div>
                 </div>
                 <div class="mb-3">
-                    <label for="name" class="form-label">municipio</label>
+                    <label for="name" class="form-label">Departamento</label>
                     <input type="text" required class="form-control" id="name" aria-describedby="nameHelp"
-                        name="name" placeholder="municipio nombre.">
+                        name="name" placeholder="Departamento nombre.">
                 </div>
-                <label for="Departament">Departamento</label>
-            <select class="form-select" id="Departament" name="code" required>
+                <label for="country">Pais</label>
+            <select class="form-select" id="country" name="code" required>
                 <option selected disable value="">CHoose one...</option>
-                @foreach ($departamentos as $departamento)
-                    <option value="{{ $departamento->depa_codi }}">{{ $departamento->depa_nomb }}</option>
+                @foreach ($paises as $pais)
+                    <option value="{{ $pais->pais_codi }}">{{ $pais->pais_nomb }}</option>
                 @endforeach
             </select>
                 <div class="mt-3">
                 <button type="submit" class="btn btn-primary">save</button>
-                <a href="{{route('municipios.index')}}" class="btn btn-warning">Cancel</a>
+                <a href="{{route('departamentos.index')}}" class="btn btn-warning">Cancel</a>
                 </div>
             </form>
         </div>
-
-
-
 
     </main>
     <footer>
