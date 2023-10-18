@@ -37,6 +37,6 @@ route::get('/municipios/{municipio}/edit', [MunicipioController::class,'edit'])-
 route::get('/departamentos', [DepartamentoController::class,'index'])->name('departamentos.index');
 route::post('/departamentos', [DepartamentoController::class,'store'])->name('departamentos.store');
 route::get('/departamentos/create', [DepartamentoController::class,'create'])->name('departamentos.create');
-
+route::delete('/departamentos/{departamento}', [DepartamentoController::class,'destroy'])->name('departamentos.destroy');
 
 

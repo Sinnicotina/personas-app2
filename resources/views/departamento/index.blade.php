@@ -39,7 +39,7 @@
                             <td>
                                 <a href="{{route('departamentos.edit',['departamento'=>$departamento->depa_codi])}}"
                                     class="btn btn-info">Editar Departamento</a></li>
-                                <form action="{{ route('departamentos.destroy', ['departamento' => $municipio->depa_codi]) }}" 
+                                <form action="{{ route('departamentos.destroy', ['departamento' => $departamento->depa_codi]) }}" 
                                 method="POST" style="display: inline-block">
                                     @method('delete')
                                     @csrf
