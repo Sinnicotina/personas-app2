@@ -35,7 +35,7 @@
                         <tr>
                             <th scope="row">{{ $pais->pais_codi }}</th>
                             <td>{{ $pais->pais_nomb }}</td>
-                            <td>{{ $pais->depa_nomb }}</td>
+                            <td>{{ $pais->pais_capi }}</td>
                             <td>
                                 <a href="{{route('paises.edit',['pais'=>$pais->pais_codi])}}"
                                     class="btn btn-info">Editar Pais</a></li>

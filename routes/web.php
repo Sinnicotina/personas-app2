@@ -3,6 +3,7 @@
 use App\Http\Controllers\ComunaController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\MunicipioController;
+use App\Http\Controllers\PaisController;
 use App\Models\Pais;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,6 @@ route::put('/departamentos/{departamento}', [DepartamentoController::class,'upda
 route::get('/departamentos/{departamento}/edit', [DepartamentoController::class,'edit'])->name('departamentos.edit');
 
 route::get('/paises', [PaisController::class,'index'])->name('paises.index');
+route::post('/paises', [PaisController::class,'store'])->name('paises.store');
+route::get('/paises/create', [PaisController::class,'create'])->name('paises.create');
+
