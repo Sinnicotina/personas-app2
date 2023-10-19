@@ -46,4 +46,5 @@ route::get('/departamentos/{departamento}/edit', [DepartamentoController::class,
 route::get('/paises', [PaisController::class,'index'])->name('paises.index');
 route::post('/paises', [PaisController::class,'store'])->name('paises.store');
 route::get('/paises/create', [PaisController::class,'create'])->name('paises.create');
+route::delete('/paises/{pais}', [PaisController::class,'destroy'])->name('paises.destroy');
 
