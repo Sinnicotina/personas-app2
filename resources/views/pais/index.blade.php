@@ -19,27 +19,27 @@
     </header>
     <main>
         <div class="container">
-            <h1>Departamentos Lista</h1>
-            <a href="{{ route('departamentos.create') }} " class="btn btn-success">añadir</a>
+            <h1>Paises Lista</h1>
+            <a href="{{ route('paises.create') }} " class="btn btn-success">Añadir</a>
             <table class="table">
                 <thead>
                     <tr>
                         <th scope="col">code</th>
-                        <th scope="col">Departamento</th>
                         <th scope="col">Pais</th>
+                        <th scope="col">Departamento</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($departamentos as $departamento)
+                    @foreach ($paises as $pais)
                         <tr>
-                            <th scope="row">{{ $departamento->depa_codi }}</th>
-                            <td>{{ $departamento->depa_nomb }}</td>
-                            <td>{{ $departamento->pais_nomb }}</td>
+                            <th scope="row">{{ $pais->pais_codi }}</th>
+                            <td>{{ $pais->pais_nomb }}</td>
+                            <td>{{ $pais->depa_nomb }}</td>
                             <td>
-                                <a href="{{route('departamentos.edit',['departamento'=>$departamento->depa_codi])}}"
-                                    class="btn btn-info">Editar Departamento</a></li>
-                                <form action="{{ route('departamentos.destroy', ['departamento' => $departamento->depa_codi]) }}" 
+                                <a href="{{route('paises.edit',['pais'=>$pais->pais_codi])}}"
+                                    class="btn btn-info">Editar Pais</a></li>
+                                <form action="{{ route('paises.destroy', ['pais' => $pais->pais_codi]) }}" 
                                 method="POST" style="display: inline-block">
                                     @method('delete')
                                     @csrf
