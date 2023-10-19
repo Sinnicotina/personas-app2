@@ -118,6 +118,6 @@ class PaisController extends Controller
         ->get();
         
 
-        return view('departamento.index',['departamentos'=>$departamentos]);
+        return view('pais.index',['paises'=>$paises]);
     }
 }
